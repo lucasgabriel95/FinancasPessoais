@@ -1,0 +1,56 @@
+<nz-layout class="app-layout">
+    <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+        <div class="sidebar-logo">
+            <a href="https://ng.ant.design/" target="_blank">
+                <img src="https://scontent.fsod2-1.fna.fbcdn.net/v/t1.0-9/p960x960/91442294_1863685330434179_8141515370365190144_o.png?_nc_cat=105&ccb=2&_nc_sid=85a577&_nc_ohc=0J9zvRIxANkAX8yWJRB&_nc_ht=scontent.fsod2-1.fna&_nc_tp=30&oh=e1db1a073df5deb8179a2e3f19f1d26c&oe=6025897D"
+                    alt="logo">
+                <h1>Finanças Pessoais</h1>
+            </a>
+        </div>
+        <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+            <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+                <ul>
+                    <li nz-menu-item nzMatchRouter>
+                        <a>Receber</a>
+                    </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a>Apagar</a>
+                    </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a>Investimentos </a>
+                    </li>
+                </ul>
+            </li>
+            <li nz-submenu nzOpen nzTitle="Lançamentos" nzIcon="form">
+                <ul>
+                    <li nz-menu-item nzMatchRouter>
+                        <a>Contas a receber</a>
+                    </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a>Contas a pagar</a>
+                    </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a>Investimentos</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nz-sider>
+    <nz-layout>
+        <nz-header>
+            <div class="app-header">
+                <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+            <i class="trigger"
+               nz-icon
+               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            ></i>
+        </span>
+            </div>
+        </nz-header>
+        <nz-content>
+            <div class="inner-content">
+                <router-outlet></router-outlet>
+            </div>
+        </nz-content>
+    </nz-layout>
+</nz-layout>
